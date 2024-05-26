@@ -1,0 +1,37 @@
+---
+- name: Install MySQL and create a db user
+  hosts: dbservers
+  vars_files:
+    - vault.yml
+
+  tasks:
+    - name: Install MySQL
+      apt:
+        name: mysql-server
+        state: present
+      notify: Start MySQL service
+
+    - name: Ensure musql service is running
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: install Python mysql lib
+      apt:
+        name: python3-mysqldb
+        state: present
+
+    - name: Create a MySQL user
+      mysql_user:
+        name: dbuser
+        host: "%"
+        password: "{{ db_password }}"
+        priv: '*.*:CREATE,INSERT,UPDATE,DELETE,SELECT'
+        state: present
+
+  handlers:
+    - name: Start MySQL service
+      service:
+        name: mysql
+        state: started
