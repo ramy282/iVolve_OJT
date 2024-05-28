@@ -86,7 +86,7 @@ Install Nginx:
 
 ## Step 6: Test the Load Balancer
 - copy the DNS name and Open a web browser and navigate to the DNS name of the load balancer.
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/01caa8ec-8e54-4de0-9550-a65f88905ebc)
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/691cff2f-7f0c-4376-8c1d-844816bfe5fb)
 
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/26ebaec4-c68e-49b8-989f-f2b27afeb8be)
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/bc5bfe58-455f-42d9-8fae-7d409c0f4d9b)
 
