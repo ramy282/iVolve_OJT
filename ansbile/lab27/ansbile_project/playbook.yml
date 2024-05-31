@@ -1,0 +1,10 @@
+---
+- name: Install Nginx and start it
+  hosts: servers
+  gather_facts: yes
+  roles:
+    - docker
+    - jenkins
+    - oc
+
+
