@@ -1,0 +1,24 @@
+---
+- name: Download oc CLI
+  get_url:
+    url: https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz
+    dest: /usr/local/bin/oc.tar.gz
+    mode: 0755
+  tags:
+    - oc
+
+- name: Extract oc CLI
+  become: yes
+  unarchive:
+    src: /usr/local/bin/oc.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+  tags:
+    - oc
+
+- name: Remove oc CLI archive
+  file:
+    path: /usr/local/bin/oc.tar.gz
+    state: absent
+  tags:
+    - oc
