@@ -1,0 +1,13 @@
+plugin: aws_ec2
+regions:
+  - us-east-1
+filters:
+  instance-state-name: running
+keyed_groups:
+  - key: tags.Name
+    prefix: name_
+hostnames:
+  - "44.202.191.246"
+  - "172.31.1.180"
+  - "ec2-44-202-191-246.compute-1.amazonaws.com"
+
