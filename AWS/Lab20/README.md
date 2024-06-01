@@ -1,6 +1,5 @@
-# lab 20
-## Objective: Launching anEC2 Instance
-Create private subnet and lunch EC2 , configure security groups, connect to the instance using Bastion host.
+# lab 20: Launching anEC2 Instance
+## Objective: Create private subnet and lunch EC2 , configure security groups, connect to the instance using Bastion host.
 
 ## Step1: Create VPC 
 1- From "Your VPCs" click "Create VPC".
