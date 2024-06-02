@@ -2,8 +2,11 @@
 ## Objective: Deploy NGINX with 3 replicas. Create a Service to expose NGINX deployment. Use port forwarding to access NGINX service locally. Update NGINX image to Apache. View deployment's rollout history. Roll back NGINX deployment to the previous image version and Monitor pod status to Confirm successful rollback.
 
 ## Step1:Apply NGINX Deployment 
-1- Build nginx.yml file with 3 replicas 
+
+1- Build nginx.yml file with 3 replicas
+
 2- Build service.yml file to expose the nginx deployment 
+
 3- Apply the deployment and service using these commands 
 
 ```
