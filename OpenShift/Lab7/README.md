@@ -35,7 +35,7 @@ oc port-forward service/nginx-service 8081:80
  
 ## Step3: Update Nginx to Apache 
  
-- to update your deployment srom Nginx th Apache:
+- to update your deployment srom Nginx to Apache:
 
 ```
 oc set image deployment/nginx-deployment nginx-deployment=httpd:latest
@@ -93,4 +93,5 @@ oc port-forward service/nginx-service 8083:80
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/5e55f7ae-2cf2-4325-9466-cd7f6d5fd00f)
 
 - Access locally at 8083
+  
   ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/945ab8c1-5474-4192-a87c-e875d59898b8)
