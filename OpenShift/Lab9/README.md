@@ -1,0 +1,3 @@
+# Lab 9: Storage Configuration 
+## Objective:
+Create a Kubernetes deployment named my-deployment with 1 replica using the NGINX image. Exec into the NGINX pod and create a file at /usr/share/nginx/html/hello.txt with the content hello, this is Ramy, verify the file is served by NGINX using curl localhost/hello.txt. Delete the NGINX pod and wait for the deployment to create a new pod then exec into the new pod and verify the file at /usr/share/nginx/html/hello.txt is no longer present. Create a Persistent Volume Pv and Persistent Volume Claim (PVC). Modify the deployment to attach the PVC to the pod at /usr/share/nginx/html. Repeat the previous steps and Verify the file persists across pod deletions. 
