@@ -58,7 +58,7 @@ oc port-forward service/nginx-service 8082:80
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/1e2e59fe-04a0-46c1-8b9a-483d047b4ff4)
 
-- Access locally at 8081
+- Access locally at 8082
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/28d0fea5-a5b2-4bf6-8c97-fd624f7390e0)
 
