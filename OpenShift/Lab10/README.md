@@ -1,6 +1,6 @@
-# Lab 10
+# Lab10: Network Configuration 
 
-## Objective: 
+## Objective: Build image from Dockerfile https://github.com/IbrahimmAdel/static-website.gitand push it to your DockerHub. Create a deployment using thiscustom NGINX image.Create a service to expose the deployment.Define a networkpolicythat allow traffic to the NGINX pods only from other pods within the same namespace.Enable the NGINX Ingress controllerusing Minikube addons. Create an Ingressresource. Update /etc/hosts to map the domain to the Minikube IP address. Access the custom NGINX service via the Ingress endpoint using the domain name. create a route in openshift.
 
 ## Step 1: Build the Docker Image
 
