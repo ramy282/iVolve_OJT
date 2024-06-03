@@ -1,15 +1,15 @@
-# Lab 12
+# Lab 12: Configuring MySQL Pod using Configmap and Secret
 
+## objective:
+Create a namespace called nti and Apply resource quota to limit resource usage within the namespace. Create a Deployment in this namespace for the MySQL pod that uses the ConfigMap and Secret. Define MySQL database name and user in a ConfigMap. Store the MySQL root password and user password in a Secret, Resources Requests: CPU: 0.5 vcpu Mem: 1G, Resources Limits: CPU: 1 vcpu Mem: 2G. Exec into the MySQL pod and verify the MySQL configuration
 
-
-
-# Step 1: Create a Namespace
+## Step 1: Create a Namespace
 
 - Create "nti" namespace
   
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/6832de78-9a12-45fb-8845-69fb6945d644)
 
-# Step 2: Apply Resource Quota
+## Step 2: Apply Resource Quota
 
 - Apply resouce quota for the resources inside nti namespace
   
@@ -35,4 +35,4 @@
 
 - Exec to MySQL pod to verify it works  
 
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/827325b6-081c-4c10-9d97-37f2048e1f69)
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/3f09e461-7872-48a3-9fac-0d778ff80876)
