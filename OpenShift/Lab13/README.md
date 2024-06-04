@@ -50,3 +50,26 @@ kubectl logs jenkins-deployment-68796cb6cc-tjzjj -c jenkins
 ## PART2
 
 ## What is the differnet between readiness & liveness ?
+
+| Feature                  | Readiness Probe                              | Liveness Probe                                   
+|-------------------------|----------------------------------------------|----------------------------------|
+| **Purpose**             | Determine if a pod is ready to serve traffic |Determine if a pod is healthy and should be restarted if not|
+| **Effect**              | Controls pod inclusion in service endpoints  | IControls container restarts |
+| **Scope** | Traffic routing and load balancing                         | Pod lifecycle management     |
+| **Fail Action**         | -Pod is marked as not ready and removed from service endpoints | Container is killed and potentially restarted |
+| **Usage Timing**        | Continuous, during the pod's lifecycle       | Continuous, during the pod's lifecycle|
+| **Typical Checks**      | Endpoint availability, application-specific checks | Health checks, deadlock detection, application-specific checks |
+
+
+## What is the differnet between init Container & sidecar Container ?
+
+| Feature                  | 	Init Containers                            | Sidecar Containers
+|-------------------------|----------------------------------------------|----------------------------------|
+| **Purpose**             | Initialization tasks before main containers start    |Enhance or extend functionality of main containers|
+| **Lifecycle**      | Run to completion before main containers start    | Run alongside main containers for the lifetime of the pod |
+| **Dependency** | Main containers depend on init containers to complete | Main containers can operate independently but benefit from sidecar containers|
+| **Use Cases**   |Environment setup, waiting for services, database migrations | Logging, monitoring, proxies, security, data synchronization |
+| **Start Order**       | Always run before main containers | Start with main containers and run concurrently|
+
+
+
