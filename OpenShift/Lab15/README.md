@@ -1,6 +1,7 @@
 # Lab15: Daemonsets & Taint and Toleration 
 
-## Objective: what is daemonset and what is it used for ? Create a DaemonSet YAMLfile with a Pod template containing an Nginx container in openshift and verify the number of pods. Using minikube, Taint the Minikube node with a specific key-value pair ‘color=red’to simulate a tainted node. Create a pod with toleration ‘color=blue’ and notice what is the status of the pod, change the toleration to ‘color=red’and notice what will happen. Make a Comparison between Taint & Toleration & Node Affinity.has context menu
+## Objective: 
+what is daemonset and what is it used for ? Create a DaemonSet YAMLfile with a Pod template containing an Nginx container in openshift and verify the number of pods. Using minikube, Taint the Minikube node with a specific key-value pair ‘color=red’to simulate a tainted node. Create a pod with toleration ‘color=blue’ and notice what is the status of the pod, change the toleration to ‘color=red’and notice what will happen. Make a Comparison between Taint & Toleration & Node Affinity.has context menu
 
 ## PART1: What is Daemonset?
 - A DaemonSet is a type of workload resource that ensures a copy of a specific pod runs on all (or some) nodes in a cluster. DaemonSets are particularly useful for deploying infrastructure-related pods that need to be present on every node, such as log collection daemons, monitoring agents, or networking components.
