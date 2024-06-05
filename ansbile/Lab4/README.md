@@ -1,6 +1,7 @@
 # Lab4: Ansible Installation 
 
-## Objective: Install and configure Ansible Automation Platform on control nodes, create inventories of 2 managed hosts, and then perform ad-hoc commands to check functionality.
+## Objective:
+Install and configure Ansible Automation Platform on control nodes, create inventories of 2 managed hosts, and then perform ad-hoc commands to check functionality.
 
 ## Step1: Install and Configure Ansible Automation Platform on Control Nodes
 
