@@ -1,5 +1,6 @@
 # Lab 23: Serverless Application Development
-## Objective: Build a serverless application using AWS Lambda, API Gatway, and DynamoDB.
+## Objective: 
+Build a serverless application using AWS Lambda, API Gatway, and DynamoDB.
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/61f1567b-99e3-4b70-929d-7f3b83f82eb4)
 
