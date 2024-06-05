@@ -1,6 +1,7 @@
 # Lab14: Helm Chart Deployment
 
-## Objective: Use Helm Chart to deploy and manage applications in an OpenShiftcluster. Explore Helm charts for common services. Create a new Helm chart for Nginx. Deploy the Helm chart and verify the deployment.Access the Nginx server.Delete nginx release.
+## Objective: 
+Use Helm Chart to deploy and manage applications in an OpenShiftcluster. Explore Helm charts for common services. Create a new Helm chart for Nginx. Deploy the Helm chart and verify the deployment.Access the Nginx server.Delete nginx release.
 
 ## Step1: Create a Helm Chart for Nginx
 
