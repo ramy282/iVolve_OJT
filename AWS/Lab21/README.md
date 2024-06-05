@@ -1,5 +1,6 @@
-# Lab 21
-## Objective: Create Aws LoadBalancer 
+# Lab 21: Create Aws LoadBalancer 
+
+## Objective: 
 create VPC  with 2 subnets, launch 2 EC2s with nginx and apache installed, and create and configure a load balancer to access the web server.
 
 ## Step 1: Create a VPC
