@@ -1,6 +1,7 @@
 # Lab 11 : OpenShift Security and RBAC
 
-## Objective: Create a ServiceAccount. Define a Role named pod-reader allowing read-only access to pods in the namespace. Bind the pod-reader Role to the ServiceAccount . Get ServiceAccounttoken. Make a Comparison between role & role binding and cluster role & cluster role binding.
+## Objective: 
+Create a ServiceAccount. Define a Role named pod-reader allowing read-only access to pods in the namespace. Bind the pod-reader Role to the ServiceAccount . Get ServiceAccounttoken. Make a Comparison between role & role binding and cluster role & cluster role binding.
 
 
 ## Step1: Create a ServiceAccount
