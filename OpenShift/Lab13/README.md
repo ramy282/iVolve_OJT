@@ -1,6 +1,7 @@
 # Lab13 : Multi-Container Application 
 
-## Objective: Create a deployment for Jenkins with an init container that sleeps for 10 seconds before the Jenkins container starts. Use readiness and liveness probes to monitor Jenkins. Create a NodePort service to expose Jenkins. Verify that the init container runs successfully and Jenkins is properly initialized. What is the differnet between readiness & liveness, init & sidecar container.
+## Objective:
+Create a deployment for Jenkins with an init container that sleeps for 10 seconds before the Jenkins container starts. Use readiness and liveness probes to monitor Jenkins. Create a NodePort service to expose Jenkins. Verify that the init container runs successfully and Jenkins is properly initialized. What is the differnet between readiness & liveness, init & sidecar container.
 
 ## PART1
 
