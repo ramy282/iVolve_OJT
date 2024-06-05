@@ -1,5 +1,6 @@
 # Lab 7: Updating Application and Rolling Back Changes 
-## Objective: Deploy NGINX with 3 replicas. Create a Service to expose NGINX deployment. Use port forwarding to access NGINX service locally. Update NGINX image to Apache. View deployment's rollout history. Roll back NGINX deployment to the previous image version and Monitor pod status to Confirm successful rollback.
+## Objective:
+Deploy NGINX with 3 replicas. Create a Service to expose NGINX deployment. Use port forwarding to access NGINX service locally. Update NGINX image to Apache. View deployment's rollout history. Roll back NGINX deployment to the previous image version and Monitor pod status to Confirm successful rollback.
 
 ## Step1:Apply NGINX Deployment 
 
