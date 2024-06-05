@@ -1,5 +1,6 @@
 # Lab 22: SDK and CL Intergrations
-## Objective: Using AWS CLI to Create an S3 bucket, Configure permisssons, andd upload/download files to/from the bucket. Enable Versioning and Logging for the bucket.
+## Objective: 
+Using AWS CLI to Create an S3 bucket, Configure permisssons, andd upload/download files to/from the bucket. Enable Versioning and Logging for the bucket.
 
 ## Step1: SetUp AWS environment 
 1- Create IAM user with programmatic access and AmazonS3FullAccess permission 
