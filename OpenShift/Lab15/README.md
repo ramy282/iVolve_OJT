@@ -72,9 +72,7 @@ spec:
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/6abc8199-3335-4f7e-97d5-ffba3ed816c8)
 
-## PART3: 
-
-## Comparison between Taint, Toleration, and Node Affinity
+## PART3: What is the difference between Taint, Toleration, and Node Affinity
 
 | Feature            | Taint                                                                 | Toleration                                                              | Node Affinity                                                          |
 |--------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------|
