@@ -1,10 +1,11 @@
-## Task3 Description 
-Ansible Vault Objective: Use Ansible Vault to encrypt sensitive information, such as database passwords, and incorporate the encrypted data into an Ansible playbook.
+# lab6: Ansible Vault 
+## Objective: Use Ansible Vault to encrypt sensitive information, such as database passwords, and incorporate the encrypted data into an Ansible playbook.
 
 ### Step1:Create the Vault-File:
 **ansible-vault create vault.yml**
 prompt will appear to enter a password of the vault-file 
 inside vault file write
+
 ```
 db_password : your_pass
 ```
