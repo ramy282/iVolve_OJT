@@ -74,12 +74,15 @@ spec:
 
 ## PART3: 
 
-| Feature            | Taint                       | Toleration                           | Node Affinity   |
-|--------------------|-----------------------------|--------------------------------------|-----------------|
-| **Purpose**        | Used to repel pods from nodes unless they have matching tolerations.  | Used to allow pods to be scheduled on nodes with matching taints. | Used to constrain which nodes a pod can be scheduled based on node labels.|
+## Comparison between Taint, Toleration, and Node Affinity
+
+| Feature            | Taint                                                                 | Toleration                                                              | Node Affinity                                                          |
+|--------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Purpose**        | Used to repel pods from nodes unless they have matching tolerations.  | Used to allow pods to be scheduled on nodes with matching taints.        | Used to constrain which nodes a pod can be scheduled based on node labels. |
 | **Definition**     | Applied to nodes to indicate that pods should not be scheduled unless they tolerate the taint. | Applied to pods to indicate that they can tolerate (or accept) specific taints on nodes. | Applied to pods to define rules about node labels for scheduling.        |
 | **Key Components** | Key, Value, and Effect (`NoSchedule`, `PreferNoSchedule`, `NoExecute`) | Key, Value, Operator (`Equal`, `Exists`), Effect (`NoSchedule`, `PreferNoSchedule`, `NoExecute`) | RequiredDuringSchedulingIgnoredDuringExecution, PreferredDuringSchedulingIgnoredDuringExecution |
 | **Effect**         | Prevents pods without matching tolerations from being scheduled on the node. | Allows pods to be scheduled on nodes with matching taints.                | Schedules pods on nodes that meet specific label criteria.                |
 | **Example Use Cases** | - Keep certain nodes free of general workloads (e.g., for special hardware or specific roles). | - Allow specific pods to run on nodes with special hardware or constraints. | - Ensure pods are scheduled on nodes with specific characteristics (e.g., region, disk type). |
-| **Example Syntax** | `kubectl taint nodes <node-name> key=value:effect`                    | ```yaml tolerations: - key: "key" operator: "Equal" value: "value" effect: "NoSchedule" ```  | ```yaml affinity: nodeAffinity: requiredDuringSchedulingIgnoredDuringExecution: nodeSelectorTerms: - matchExpressions: - key: "key" operator: "In" values: ["value"] ``` |
 | **Behavior When Not Matched** | Pods are not scheduled on the tainted node.                 | Pods without matching tolerations are not scheduled on tainted nodes.     | Pods are not scheduled on nodes that do not meet the affinity criteria.   |
+
+
