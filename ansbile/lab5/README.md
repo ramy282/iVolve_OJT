@@ -1,6 +1,7 @@
 # Lab5: Ansible Playbooks for Web Server Configuration 
 
-## Objective: Wrie an Ansible Playbook to automate the configuration of a web server. Configure Apache/Nginx deply a sample website and ensure proper secuirty settings.
+## Objective:
+Wrie an Ansible Playbook to automate the configuration of a web server. Configure Apache/Nginx deply a sample website and ensure proper secuirty settings.
 
 ## Step1: Perpare AWS Enviroments
 
