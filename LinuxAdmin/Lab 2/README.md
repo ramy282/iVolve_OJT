@@ -2,8 +2,11 @@
 ## Objective: 
 Craete a Shell script that automates checking disk storage usage and sends an email alert if uasge exceeds a specified threshold 
 
-## Step1: Install sstmp package
-run command `sudo apt install smstp`
+## Step1: Install smstp package
+run command 
+```
+sudo apt install smstp
+```
 ![WhatsApp Image 2024-05-31 at 23 42 00_474a0e12](https://github.com/ramy282/iVolve_OJT/assets/60857262/9d1a0032-8c22-4fc9-9380-20a839b170a3)
 
 ## Step2: Add you Crediantials in ~/.msmtprc
