@@ -62,4 +62,27 @@ echo <your-encoded-password> | base64 --decode
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/1ca59583-83f7-43a9-9392-a4f923002039)
 
   
-  
+## Deploy ELK on k8s cluster 
+
+## Step1: Install ELK 
+-  To install ELK as showen in their official website https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-eck.html
+
+1- To install ELK Common resource
+```
+kubectl create -f https://download.elastic.co/downloads/eck/2.13.0/crds.yaml
+```
+2- Install the operator with its RBAC rules
+```
+kubectl apply -f https://download.elastic.co/downloads/eck/2.13.0/operator.yaml
+```
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/00c1aeea-1315-4739-9a28-c7bcb8cf784f)
+
+## Deploy an Elasticsearch cluster
+
+- Build and apply elastic search YAML file
+
+- Monitor cluster health and creation progress
+
+```
+kubectl get service quickstart-es-http
+```
