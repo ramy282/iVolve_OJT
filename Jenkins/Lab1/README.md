@@ -8,7 +8,7 @@
 
 1- Create A service account on your oc cluster 
 ```
-oc create service account jenkins
+oc create serviceaccount jenkins
 ```
 
 2- Add role to your service account to access the token 
@@ -62,11 +62,7 @@ git clone https://github.com/IbrahimmAdel/app.git
 - Use jenkins salve
 ```
 pipeline {
-    agent { 
-        // Specifies a label to select an available agent
-         node { 
-             label 'slave1'
-         }
+    agent any
     }
 ```
 
@@ -74,18 +70,6 @@ pipeline {
 ```
  stages {
 
-        stage('Test') {
-            steps {
-                script {
-                      
-                	    echo "Running Unit Test..."
-			            // sh 'chmod 744 ./gradlew'
-			            // sh './gradlew clean test'
-                        }
-                    }
-        	    }
-    	    }
-	}
         stage('Build Docker Image') {
             steps {
                 script {
@@ -112,6 +96,7 @@ pipeline {
             }
         }
     }
+}
 ```
 
 - Define the post action of the pipline
@@ -147,7 +132,6 @@ def call(String openshiftCredentialsID, String openshiftClusterURL, String opens
             oc login ${openshiftClusterURL} --token=${OPENSHIFT_TOKEN}
             oc project ${openshiftProject}
             oc new-app ${imageName}
-            oc expose svc/${imageName}
         """
     }
 }
@@ -170,11 +154,36 @@ in Global pipline section
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/08b7c5be-3aa3-4473-97d7-f764adaf853b)
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/871a4748-bc61-4f6e-a48d-610aecb2c02c)
     
+## Step6: Create a pipline 
+1- Click New item
 
-## Step6: Create Jenkins Deployment and service 
+2- Enter pipline name and choose pipline
+
+3- In pipline Defination section choose pipline script from SCM
+
+4- in SCM choose git 
+
+5- Enter repo URL and select your credentials
+
+6- In Branch Spcifier Enter */master 
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/b54750f3-35b0-4e30-803b-84d1cc547de3)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/7e1d0778-e75d-455f-9bd7-b6e2c4f2655f)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/ced84947-3575-4cbf-9511-50cec1d7fd71)
+
+## Step7: Run the pipline 
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/bbebb8ac-4e0b-462a-b448-14963ad4df28)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/c4addc4a-bc7c-4ee8-8f92-0c71297d0dbe)
+
+## Step8: Create Jenkins Deployment and service 
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/47efe0ce-e1ae-4512-b7f1-b5e333103e06)
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/e8e425b1-c66e-4ea7-8c3f-e867a9b0d19d)
 
+## Step9: Create Jenkins-slave 
 
