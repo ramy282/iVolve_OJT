@@ -5,18 +5,18 @@ All labs are documented and uploaded here, showcasing the practical skills and r
 Feel free to explore the repository and follow along with the training exercises.
 Technologies Covered
 
-- Red Hat Linux Administration
+- [Red Hat Linux Administration](https://github.com/ramy282/iVolve_OJT/tree/main/LinuxAdmin)
 
-- Ansible
+- [Ansible](https://github.com/ramy282/iVolve_OJT/tree/main/ansbile)
 
-- Terraform
+- [Terraform](https://github.com/ramy282/iVolve_OJT/tree/main/Terraform)
   
-- AWS
+- [AWS](https://github.com/ramy282/iVolve_OJT/tree/main/AWS)
     
-- Kubernetes
+- [Openshift/Kubernetes](https://github.com/ramy282/iVolve_OJT/tree/main/OpenShift)
 
-- OpenShift
-
+- [Jenkins](https://github.com/ramy282/iVolve_OJT/tree/main/Jenkins/Lab1)
+  
 ## Acknowledgments
 A big thank you to NTI for this opportunity and to iVolve Technologies for the hands-on experience.
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/b29fef96-8159-4496-bf0a-612c6845af10)
