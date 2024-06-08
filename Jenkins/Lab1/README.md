@@ -45,19 +45,22 @@ sudo docker run -p 8080:8080 -p 50000:50000 -d \
 ## Step3: Clone your application 
 
 1- Clone the application 
+
+[jenkinas-lab1](https://github.com/ramy282/Jenkins-lab1.git)
+
 ```
 git clone https://github.com/IbrahimmAdel/app.git
 ```
 
 2- update DockerFile 
 
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/d5744575-9699-409a-8947-e011996ceb8e)
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/aa987a21-275b-4f48-bfb7-001db8f4e11b)
 
 ## Step3: Create Jenkinsfile
 - use shared-library
-  ```
-  @Library('shared-library')_
-  ```
+```
+@Library('shared-library')_
+```
   
 - Use jenkins salve
 ```
@@ -153,8 +156,14 @@ def call(String dockerHubCredentialsID, String imageName) {
 in Global pipline section
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/08b7c5be-3aa3-4473-97d7-f764adaf853b)
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/871a4748-bc61-4f6e-a48d-610aecb2c02c)
-    
-## Step6: Create a pipline 
+
+## Step6: Create Jenkins Deployment and service 
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/47efe0ce-e1ae-4512-b7f1-b5e333103e06)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/e8e425b1-c66e-4ea7-8c3f-e867a9b0d19d)
+
+## Step7: Create a pipline 
 1- Click New item
 
 2- Enter pipline name and choose pipline
@@ -173,17 +182,126 @@ in Global pipline section
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/ced84947-3575-4cbf-9511-50cec1d7fd71)
 
-## Step7: Run the pipline 
+## Step8: Run the pipline 
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/bbebb8ac-4e0b-462a-b448-14963ad4df28)
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/c4addc4a-bc7c-4ee8-8f92-0c71297d0dbe)
 
-## Step8: Create Jenkins Deployment and service 
-
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/47efe0ce-e1ae-4512-b7f1-b5e333103e06)
-
-![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/e8e425b1-c66e-4ea7-8c3f-e867a9b0d19d)
-
 ## Step9: Create Jenkins-slave 
 
+- Create an Ubnuntu EC2 instances type t3.small
+
+- All ssh in Secuirty group
+
+- Download Docker , java and openshift on EC2
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/6aa9e343-03ce-42da-8a08-59fa10c46b20)
+  
+```
+# Update the package index
+sudo apt-get update
+
+# Install required packages
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+# Add Docker’s official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add Docker repository to APT sources
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Update the package index again
+sudo apt-get update
+
+# Install Docker
+sudo apt-get install -y docker-ce
+
+# Start the Docker service
+sudo systemctl start docker
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+# Add ubuntu user to the docker group
+sudo usermod -aG docker ubuntu
+
+# Apply group membership (log out and log back in, or run this command)
+newgrp docker
+
+# Verify Docker installation
+docker --version
+
+# Update the package index
+sudo apt-get update
+
+# Install OpenJDK
+sudo apt-get install -y openjdk-11-jdk
+
+# Verify the Java installation
+java -version
+
+# Verify JAVA_HOME
+echo $JAVA_HOME
+
+# Connect to your EC2 instance
+ssh -i your-key.pem ubuntu@your-ec2-public-dns
+
+# Download the OpenShift CLI tarball
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+
+# Extract the tarball
+tar -xzvf openshift-client-linux.tar.gz
+
+# Move the oc binary to /usr/local/bin
+sudo mv oc /usr/local/bin/
+sudo mv kubectl /usr/local/bin/ # if you want kubectl as well
+
+# Verify the installation
+oc version
+```
+
+## Step10: Add jenkins-slave Crediantials 
+
+- Manage jenkins >> credentials >> golbal >> Add Credentials >> Choose ssh with a private key
+
+- Add label jenkins-slave
+
+- Enter jenkins private key and save   
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/13d29f3d-0c62-423b-a3f2-a458230d7250)
+
+## Step11: Configure the jenkins-slave with master node
+
+- Manage jenkins >> nodes >> new node
+
+- Enter 'jenkins-slave' as a label
+
+- under remote root directory enter '/home/ubuntu'
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/e9d983ec-ac7e-4733-abd6-ac418c0c3a4b)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/74a2e515-5496-499e-931c-031588f2fcb4)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/4e7130be-62e1-4b18-bb68-61139ea638c2)
+
+## Step12: Create A pipline with jenkins-slave 
+
+- Add pipline new item
+
+- Give it Repo URL and Ubuntu credintials
+
+ ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/2fa712c3-a15a-4535-bf3f-831d7af2f3af)
+
+**Build the pipline** 
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/66dafadd-ef07-41c7-87b2-5910fc167ff7)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/dfdee547-8c72-4c8b-8790-24ddf14ed83b)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/43e7010a-fe45-4f08-b631-1dcc5bb06cb2)
+
+## Step12: Verify The Image is pushed on DockerHub 
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/12a92a64-f473-49fc-9fb3-ed289864a077)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/94f18a72-d0c5-4fd0-84b7-527677dc40b2)
