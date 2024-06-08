@@ -302,6 +302,14 @@ oc version
 
 ## Step12: Verify The Image is pushed on DockerHub 
 
+- Use port-forward for your service
+```
+oc port-forward svc/jenkins-lab1 8080:8081
+```
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/f5faa7d1-5c9e-4451-9622-c097006f84ec)
+
+![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/d6df5490-ab00-4eef-9266-2b053ba2eb15)
+
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/12a92a64-f473-49fc-9fb3-ed289864a077)
 
 ![image](https://github.com/ramy282/iVolve_OJT/assets/60857262/94f18a72-d0c5-4fd0-84b7-527677dc40b2)
